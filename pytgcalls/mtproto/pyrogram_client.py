@@ -1,3 +1,5 @@
+# MODIFIED BY @H1M4N5HU0P
+
 import json
 from typing import Callable
 from typing import Dict
@@ -28,7 +30,7 @@ from pyrogram.raw.types import MessageService
 from pyrogram.raw.types import PeerChat
 from pyrogram.raw.types import UpdateChannel
 from pyrogram.raw.types import UpdateGroupCall
-from pyrogram.raw.types import UpdateGroupCallConnection
+# from pyrogram.raw.types import UpdateGroupCallConnection
 from pyrogram.raw.types import UpdateGroupCallParticipants
 from pyrogram.raw.types import UpdateNewChannelMessage
 from pyrogram.raw.types import UpdateNewMessage
@@ -324,19 +326,19 @@ class PyrogramClient(BridgedClient):
                             participant.raise_hand_rating,
                             participant.left,
                         )
-                if isinstance(update, UpdateGroupCallConnection):
-                    transport = json.loads(update.params.data)[
-                        'transport'
-                    ]
-                    return {
-                        'transport': {
-                            'ufrag': transport['ufrag'],
-                            'pwd': transport['pwd'],
-                            'fingerprints': transport['fingerprints'],
-                            'candidates': transport['candidates'],
-                        },
-                    }
-        return {'transport': None}
+#                if isinstance(update, UpdateGroupCallConnection):
+#                    transport = json.loads(update.params.data)[
+#                        'transport'
+#                    ]
+#                    return {
+#                        'transport': {
+#                            'ufrag': transport['ufrag'],
+#                            'pwd': transport['pwd'],
+#                            'fingerprints': transport['fingerprints'],
+#                            'candidates': transport['candidates'],
+#                        },
+#                    }
+#        return {'transport': None}
 
     async def leave_group_call(
         self,
